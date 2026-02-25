@@ -6,7 +6,7 @@
     <title>Luan | Dev & TI desde 2004</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg:      #05050f;
@@ -19,8 +19,8 @@
             --text:    #eeeeff;
             --muted:   #6666aa;
 
-            --font-body: 'Nunito', sans-serif;
-            --font-mono: 'Fira Code', monospace;
+            --font-body: 'Roboto', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -73,7 +73,7 @@
             color: var(--muted);
             text-decoration: none;
             font-size: 0.88em;
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: 0.3px;
             transition: color 0.2s;
             position: relative;
@@ -120,7 +120,7 @@
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 8px;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
         }
         .hero h1 .name {
             background: linear-gradient(90deg, var(--purple), var(--cyan), var(--pink));
@@ -136,7 +136,7 @@
         }
         .hero-subtitle {
             font-family: var(--font-mono);
-            font-size: 0.92em;
+            font-size: 0.9em;
             color: var(--muted);
             margin-bottom: 32px;
         }
@@ -155,8 +155,8 @@
             font-family: var(--font-body);
             padding: 12px 28px;
             border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.92em;
+            font-weight: 600;
+            font-size: 0.9em;
             text-decoration: none;
             transition: all 0.25s;
         }
@@ -177,7 +177,7 @@
         .hstat-num {
             font-family: var(--font-mono);
             font-size: 1.9em;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--cyan);
             text-shadow: 0 0 20px rgba(0,245,212,0.5);
             display: block;
@@ -185,7 +185,7 @@
         .hstat-lbl {
             font-family: var(--font-body);
             font-size: 0.72em;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--muted);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -239,7 +239,7 @@
             padding: 7px 13px;
             font-family: var(--font-body);
             font-size: 0.8em;
-            font-weight: 700;
+            font-weight: 600;
             white-space: nowrap;
             z-index: 10;
             animation: float 3s ease-in-out infinite;
@@ -260,7 +260,7 @@
         .sec-title {
             font-family: var(--font-body);
             font-size: 1.65em;
-            font-weight: 800;
+            font-weight: 700;
             letter-spacing: -0.3px;
         }
         .sec-title span {
@@ -300,18 +300,18 @@
             font-size: 0.7em;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--muted);
             margin-bottom: 10px;
         }
         .acard p {
             font-family: var(--font-body);
-            font-size: 0.97em;
+            font-size: 0.95em;
             font-weight: 400;
             color: #b0b0d0;
             line-height: 1.85;
         }
-        .acard p strong { color: var(--text); font-weight: 700; }
+        .acard p strong { color: var(--text); font-weight: 600; }
 
         /* PROJECTS */
         .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 18px; }
@@ -337,8 +337,8 @@
         .proj-card:hover { border-color: var(--purple); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(191,90,242,0.1); }
         .proj-card:hover::after { opacity: 1; }
         .proj-icon { font-size: 2em; }
-        .proj-title { font-family: var(--font-body); font-size: 1.02em; font-weight: 800; color: var(--text); }
-        .proj-desc { font-family: var(--font-body); font-size: 0.9em; font-weight: 400; color: var(--muted); line-height: 1.7; flex: 1; }
+        .proj-title { font-family: var(--font-body); font-size: 1.02em; font-weight: 700; color: var(--text); }
+        .proj-desc { font-family: var(--font-body); font-size: 0.88em; font-weight: 400; color: var(--muted); line-height: 1.7; flex: 1; }
         .proj-lang {
             align-self: flex-start;
             padding: 4px 12px;
@@ -366,7 +366,7 @@
             font-size: 0.75em;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 16px;
             padding-bottom: 12px;
             border-bottom: 1px solid var(--border);
@@ -410,7 +410,7 @@
             background: radial-gradient(circle, rgba(191,90,242,0.12) 0%, transparent 70%);
             pointer-events: none;
         }
-        .contact-wrap h3 { font-family: var(--font-body); font-size: 1.6em; font-weight: 800; margin-bottom: 12px; }
+        .contact-wrap h3 { font-family: var(--font-body); font-size: 1.6em; font-weight: 700; margin-bottom: 12px; }
         .contact-wrap p { font-family: var(--font-body); font-weight: 400; color: var(--muted); margin-bottom: 32px; font-size: 1em; }
         .contact-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
         .cbtn {
@@ -420,7 +420,7 @@
             gap: 9px;
             padding: 13px 30px;
             border-radius: 8px;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 0.92em;
             text-decoration: none;
             transition: all 0.25s;
@@ -516,7 +516,7 @@
             <div class="acard c4 full">
                 <div class="acard-icon">📅</div>
                 <h4>Trajetória</h4>
-                <p><strong>Técnico de Informática desde 2004</strong>, acumulando mais de <strong>duas décadas</strong> de experiência prática em tecnologia da informação. Começando pelas bases — manutenção de hardware, configuração de sistemas e suporte técnico — evolui naturalmente para o desenvolvimento de software, administração de servidores e arquitetura de soluções complexas.</p>
+                <p><strong>Técnico de Informática desde 2004</strong>, acumulando mais de <strong>duas décadas</strong> de experiência prática em tecnologia da informação. Começando pelas bases — manutenção de hardware, configuração de sistemas e suporte técnico — evoluí naturalmente para desenvolvimento de software, administração de servidores, redes e arquitetura de soluções complexas.</p>
             </div>
             <div class="acard c1">
                 <div class="acard-icon">💻</div>
@@ -530,8 +530,8 @@
             </div>
             <div class="acard c3">
                 <div class="acard-icon">🖥️</div>
-                <h4>Infraestrutura & Redes</h4>
-                <p>Administro servidores <strong>IBM Lenovo</strong> e virtualização com <strong>Proxmox/VMware</strong>. Configuro topologias <strong>MikroTik</strong> com <strong>BGP</strong> e <strong>OSPF</strong>, switches <strong>Juniper</strong> e segurança perimetral.</p>
+                <h4>Infraestrutura, Redes & NAC</h4>
+                <p>Administro servidores <strong>IBM Lenovo</strong> e virtualização com <strong>Proxmox/VMware</strong>. Projeto e opero redes corporativas com <strong>MikroTik</strong>, <strong>BGP</strong>, <strong>OSPF</strong> e switches <strong>Juniper</strong>. Tenho domínio em <strong>NAC empresarial</strong> e uso avançado de <strong>PacketFence</strong> para controle de acesso, 802.1X, portal cativo e hotspots em ambientes de produção.</p>
             </div>
         </div>
     </section>
@@ -588,7 +588,7 @@
             <div class="skill-box"><h4>🗄️ Bancos de Dados</h4><div class="skill-tags"><span class="stag">PostgreSQL</span><span class="stag">SQL Server</span><span class="stag">MySQL</span><span class="stag">MongoDB</span></div></div>
             <div class="skill-box"><h4>🤖 Inteligência Artificial</h4><div class="skill-tags"><span class="stag">Ollama</span><span class="stag">DeepSeek</span><span class="stag">Mistral</span><span class="stag">Qwen</span><span class="stag">LLMs</span><span class="stag">AI/ML</span></div></div>
             <div class="skill-box"><h4>🏢 Sistemas Empresariais</h4><div class="skill-tags"><span class="stag">Odoo ERP</span><span class="stag">Sped Fiscal</span><span class="stag">NFe Brasil</span><span class="stag">Prometheus</span><span class="stag">Grafana</span></div></div>
-            <div class="skill-box"><h4>🌐 Redes & Servidores</h4><div class="skill-tags"><span class="stag">MikroTik</span><span class="stag">BGP</span><span class="stag">OSPF</span><span class="stag">Juniper</span><span class="stag">VLANs</span><span class="stag">Firewall</span><span class="stag">VPN</span><span class="stag">TCP/IP</span><span class="stag">IBM Lenovo</span></div></div>
+            <div class="skill-box"><h4>🌐 Redes & Servidores</h4><div class="skill-tags"><span class="stag">MikroTik</span><span class="stag">BGP</span><span class="stag">OSPF</span><span class="stag">Juniper</span><span class="stag">VLANs</span><span class="stag">Firewall</span><span class="stag">VPN</span><span class="stag">TCP/IP</span><span class="stag">IBM Lenovo</span><span class="stag">NAC</span><span class="stag">PacketFence</span></div></div>
         </div>
     </section>
 
