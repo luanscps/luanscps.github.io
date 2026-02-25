@@ -1,58 +1,39 @@
-# Luan - Portfólio Profissional
+# Luan's Portfolio
 
-🚀 Portfólio pessoal desenvolvido com [Astro](https://astro.build)
+🚀 Portfolio pessoal hospedado no GitHub Pages
 
-## 🌟 Sobre
+## 🌐 Acesse
 
-Site de portfólio profissional apresentando projetos, habilidades e informações de contato.
+https://luanscps.github.io
+
+## 👨‍💻 Sobre
+
+Desenvolvedor Python especializado em:
+- 🐳 Docker & Containerização
+- 🤖 Inteligência Artificial & LLMs
+- 📦 Sistemas ERP (Odoo)
+- 📊 Monitoramento & Observabilidade
+- 🔧 DevOps & Automação
+
+## 📁 Estrutura
+
+```
+luanscps.github.io/
+├── index.html          # Página principal
+└── README.md          # Este arquivo
+```
 
 ## 🛠️ Tecnologias
 
-- **Astro** - Framework web moderno
-- **TypeScript** - Tipagem estática
-- **GitHub Pages** - Hospedagem
-- **GitHub Actions** - CI/CD automático
+- HTML5
+- CSS3
+- GitHub Pages
 
-## 💻 Desenvolvimento Local
+## 📫 Contato
 
-```bash
-# Instalar dependências
-npm install
+- GitHub: [@luanscps](https://github.com/luanscps)
+- Email: luanscps@gmail.com
 
-# Iniciar servidor de desenvolvimento
-npm run dev
+---
 
-# Build para produção
-npm run build
-
-# Preview do build
-npm run preview
-```
-
-## 🚀 Deploy
-
-O site é automaticamente construído e implantado no GitHub Pages através do GitHub Actions sempre que há um push na branch `main`.
-
-Acesse em: [https://luanscps.github.io](https://luanscps.github.io)
-
-## 📝 Estrutura do Projeto
-
-```
-/
-├── public/          # Arquivos estáticos
-├── src/
-│   ├── components/  # Componentes Astro
-│   ├── layouts/     # Layouts da página
-│   └── pages/       # Páginas do site
-├── astro.config.mjs
-└── package.json
-```
-
-## 🔗 Links
-
-- [GitHub](https://github.com/luanscps)
-- [Email](mailto:luanscps@gmail.com)
-
-## 📝 Licença
-
-MIT License - sinta-se livre para usar este projeto como referência!
+© 2026 Luan | Desenvolvedor desde 2015
