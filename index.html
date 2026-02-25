@@ -198,9 +198,13 @@
         .hero-right { display: flex; justify-content: center; align-items: center; position: relative; }
         .avatar-wrap { position: relative; width: 200px; height: 200px; }
         .avatar-wrap img {
-            width: 180px; height: 180px;
-            border-radius: 20px;
-            position: relative; z-index: 2;
+            position: absolute;
+            inset: 3px;
+            width: calc(100% - 6px);
+            height: calc(100% - 6px);
+            border-radius: 19px;
+            object-fit: cover;
+            z-index: 2;
             filter: grayscale(10%);
         }
         .avatar-glow {
@@ -501,7 +505,7 @@
         <div class="avatar-wrap">
             <div class="avatar-glow"></div>
             <div class="avatar-border"><div class="avatar-border-inner"></div></div>
-            <img src="https://avatars.githubusercontent.com/u/13770810?v=4" alt="Luan" style="position:relative;z-index:2;">
+            <img src="https://avatars.githubusercontent.com/u/13770810?v=4" alt="Luan">
             <div class="float-badge b1">🐍 Python</div>
             <div class="float-badge b2">🐳 Docker</div>
             <div class="float-badge b3">🌐 BGP/OSPF</div>
