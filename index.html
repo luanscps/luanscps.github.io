@@ -6,7 +6,7 @@
     <title>Luan | Dev & TI desde 2004</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg:      #05050f;
@@ -19,9 +19,8 @@
             --text:    #eeeeff;
             --muted:   #6666aa;
 
-            --font-body:  'Inter', sans-serif;
-            --font-head:  'Space Grotesk', sans-serif;
-            --font-mono:  'JetBrains Mono', monospace;
+            --font-body: 'Poppins', sans-serif;
+            --font-mono: 'Fira Code', monospace;
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -62,8 +61,8 @@
         }
         .nav-logo {
             font-family: var(--font-mono);
-            font-size: 1.1em;
-            font-weight: 700;
+            font-size: 1em;
+            font-weight: 600;
             background: linear-gradient(90deg, var(--purple), var(--cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -74,10 +73,9 @@
             font-family: var(--font-body);
             color: var(--muted);
             text-decoration: none;
-            font-size: 0.9em;
+            font-size: 0.85em;
             font-weight: 500;
             letter-spacing: 0.5px;
-            text-transform: uppercase;
             transition: color 0.2s;
             position: relative;
         }
@@ -111,18 +109,17 @@
             border: 1px solid var(--purple);
             border-radius: 4px;
             font-family: var(--font-mono);
-            font-size: 0.78em;
+            font-size: 0.72em;
             color: var(--purple);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 20px;
             background: rgba(191,90,242,0.07);
         }
         .hero h1 {
-            font-family: var(--font-head);
-            font-size: 4em;
+            font-family: var(--font-body);
+            font-size: 3.8em;
             font-weight: 800;
-            line-height: 1.05;
+            line-height: 1.1;
             margin-bottom: 8px;
             letter-spacing: -1px;
         }
@@ -140,7 +137,7 @@
         }
         .hero-subtitle {
             font-family: var(--font-mono);
-            font-size: 1em;
+            font-size: 0.95em;
             color: var(--muted);
             margin-bottom: 32px;
         }
@@ -161,10 +158,9 @@
             padding: 12px 28px;
             border-radius: 6px;
             font-weight: 600;
-            font-size: 0.95em;
+            font-size: 0.9em;
             text-decoration: none;
             transition: all 0.25s;
-            letter-spacing: 0.3px;
         }
         .cta-primary {
             background: linear-gradient(135deg, var(--purple), var(--pink));
@@ -182,7 +178,7 @@
         .hero-stats { display: flex; gap: 40px; }
         .hstat-num {
             font-family: var(--font-mono);
-            font-size: 2em;
+            font-size: 1.9em;
             font-weight: 700;
             color: var(--cyan);
             text-shadow: 0 0 20px rgba(0,245,212,0.5);
@@ -190,7 +186,8 @@
         }
         .hstat-lbl {
             font-family: var(--font-body);
-            font-size: 0.78em;
+            font-size: 0.72em;
+            font-weight: 500;
             color: var(--muted);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -243,7 +240,7 @@
             border-radius: 8px;
             padding: 7px 13px;
             font-family: var(--font-body);
-            font-size: 0.82em;
+            font-size: 0.8em;
             font-weight: 600;
             white-space: nowrap;
             z-index: 10;
@@ -261,12 +258,12 @@
         .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 48px 100px; position: relative; z-index: 1; }
         .sec { margin-bottom: 80px; }
         .sec-header { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; }
-        .sec-num { font-family: var(--font-mono); font-size: 0.9em; color: var(--cyan); opacity: 0.7; }
+        .sec-num { font-family: var(--font-mono); font-size: 0.85em; color: var(--cyan); opacity: 0.7; }
         .sec-title {
-            font-family: var(--font-head);
-            font-size: 1.7em;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-family: var(--font-body);
+            font-size: 1.65em;
+            font-weight: 700;
+            letter-spacing: -0.3px;
         }
         .sec-title span {
             background: linear-gradient(90deg, var(--purple), var(--cyan));
@@ -302,7 +299,7 @@
         .acard-icon { font-size: 1.6em; margin-bottom: 12px; }
         .acard h4 {
             font-family: var(--font-body);
-            font-size: 0.75em;
+            font-size: 0.7em;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
@@ -311,9 +308,10 @@
         }
         .acard p {
             font-family: var(--font-body);
-            font-size: 0.97em;
+            font-size: 0.95em;
+            font-weight: 300;
             color: #b0b0d0;
-            line-height: 1.8;
+            line-height: 1.85;
         }
         .acard p strong { color: var(--text); font-weight: 600; }
 
@@ -342,16 +340,17 @@
         .proj-card:hover::after { opacity: 1; }
         .proj-icon { font-size: 2em; }
         .proj-title {
-            font-family: var(--font-head);
-            font-size: 1.05em;
+            font-family: var(--font-body);
+            font-size: 1.02em;
             font-weight: 700;
             color: var(--text);
         }
         .proj-desc {
             font-family: var(--font-body);
-            font-size: 0.9em;
+            font-size: 0.88em;
+            font-weight: 300;
             color: var(--muted);
-            line-height: 1.65;
+            line-height: 1.7;
             flex: 1;
         }
         .proj-lang {
@@ -359,7 +358,7 @@
             padding: 4px 12px;
             border-radius: 4px;
             font-family: var(--font-mono);
-            font-size: 0.78em;
+            font-size: 0.75em;
             font-weight: 500;
             background: rgba(0,245,212,0.08);
             color: var(--cyan);
@@ -378,7 +377,7 @@
         .skill-box:hover { border-color: #2e2e5e; }
         .skill-box h4 {
             font-family: var(--font-body);
-            font-size: 0.78em;
+            font-size: 0.75em;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
@@ -394,8 +393,8 @@
             background: var(--bg3);
             border: 1px solid var(--border);
             border-radius: 5px;
-            font-size: 0.84em;
-            font-weight: 500;
+            font-size: 0.82em;
+            font-weight: 400;
             color: #c0c0e0;
             transition: all 0.2s;
             cursor: default;
@@ -404,7 +403,6 @@
             border-color: var(--purple);
             color: var(--purple);
             background: rgba(191,90,242,0.08);
-            text-shadow: 0 0 10px rgba(191,90,242,0.4);
         }
 
         /* CONTACT */
@@ -427,13 +425,14 @@
             pointer-events: none;
         }
         .contact-wrap h3 {
-            font-family: var(--font-head);
+            font-family: var(--font-body);
             font-size: 1.6em;
             font-weight: 700;
             margin-bottom: 12px;
         }
         .contact-wrap p {
             font-family: var(--font-body);
+            font-weight: 300;
             color: var(--muted);
             margin-bottom: 32px;
             font-size: 1em;
@@ -447,7 +446,7 @@
             padding: 13px 30px;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 0.95em;
+            font-size: 0.92em;
             text-decoration: none;
             transition: all 0.25s;
         }
@@ -471,7 +470,7 @@
             text-align: center;
             color: var(--muted);
             font-family: var(--font-mono);
-            font-size: 0.82em;
+            font-size: 0.8em;
             position: relative; z-index: 1;
         }
         footer span.p { color: var(--purple); }
@@ -481,7 +480,6 @@
         @media (max-width: 768px) {
             nav { padding: 14px 20px; }
             .nav-links { gap: 16px; }
-            .nav-links a { font-size: 0.78em; }
             .hero { grid-template-columns: 1fr; padding: 60px 20px 40px; gap: 40px; }
             .hero h1 { font-size: 2.6em; }
             .hero-right { order: -1; }
@@ -546,7 +544,6 @@
 <!-- WRAPPER -->
 <div class="wrapper">
 
-    <!-- SOBRE -->
     <section class="sec" id="sobre">
         <div class="sec-header">
             <span class="sec-num">01.</span>
@@ -577,7 +574,6 @@
         </div>
     </section>
 
-    <!-- PROJETOS -->
     <section class="sec" id="projetos">
         <div class="sec-header">
             <span class="sec-num">02.</span>
@@ -618,7 +614,6 @@
         </div>
     </section>
 
-    <!-- SKILLS -->
     <section class="sec" id="skills">
         <div class="sec-header">
             <span class="sec-num">03.</span>
@@ -675,7 +670,6 @@
         </div>
     </section>
 
-    <!-- CONTATO -->
     <section class="sec" id="contato">
         <div class="sec-header">
             <span class="sec-num">04.</span>
@@ -700,7 +694,6 @@
 
 </div>
 
-<!-- FOOTER -->
 <footer>
     <p><span class="p">//</span> &copy; 2026 <span class="c">Luan</span> &mdash; Sysadmin &amp; Técnico desde 2004 &mdash; Feito com <span class="p">♥</span> e HTML puro</p>
 </footer>
