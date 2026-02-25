@@ -1,0 +1,108 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  language: string;
+  topics?: string[];
+}
+
+const { title, description, url, language, topics = [] } = Astro.props;
+---
+
+<div class="project-card">
+  <div class="project-header">
+    <h3>{title}</h3>
+    <span class="language">{language}</span>
+  </div>
+  <p class="description">{description}</p>
+  {topics.length > 0 && (
+    <div class="topics">
+      {topics.map((topic) => (
+        <span class="topic-tag">{topic}</span>
+      ))}
+    </div>
+  )}
+  <a href={url} target="_blank" rel="noopener noreferrer" class="project-link">
+    Ver no GitHub →
+  </a>
+</div>
+
+<style>
+  .project-card {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(var(--accent), 0.2);
+    border-color: rgba(var(--accent), 0.5);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .language {
+    background: rgba(var(--accent), 0.2);
+    color: rgb(var(--accent-light));
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+
+  .topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .topic-tag {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .project-link {
+    color: rgb(var(--accent));
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .project-link:hover {
+    color: rgb(var(--accent-light));
+    transform: translateX(4px);
+  }
+</style>
