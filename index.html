@@ -9,19 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Light Neon (modo claro) */
             --bg:      #f6f7fb;
             --bg2:     #ffffff;
             --bg3:     #eff2fb;
             --border:  #e3e7f5;
-
             --purple:  #7c3aed;
             --cyan:    #06b6d4;
             --pink:    #ec4899;
-
             --text:    #0f172a;
             --muted:   #475569;
-
             --font-body: 'Roboto', sans-serif;
             --font-mono: 'Roboto Mono', monospace;
         }
@@ -48,7 +44,6 @@
             z-index: 0;
         }
 
-        /* NAV */
         nav {
             position: sticky;
             top: 0;
@@ -93,7 +88,6 @@
         .nav-links a:hover { color: var(--cyan); }
         .nav-links a:hover::after { transform: scaleX(1); }
 
-        /* HERO */
         .hero {
             position: relative;
             z-index: 1;
@@ -194,7 +188,6 @@
             letter-spacing: 1px;
         }
 
-        /* AVATAR */
         .hero-right { display: flex; justify-content: center; align-items: center; position: relative; }
         .avatar-wrap { position: relative; width: 200px; height: 200px; }
         .avatar-wrap img {
@@ -260,7 +253,6 @@
             50%       { transform: translateY(-6px); }
         }
 
-        /* WRAPPER */
         .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 48px 100px; position: relative; z-index: 1; }
         .sec { margin-bottom: 80px; }
         .sec-header { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; }
@@ -279,7 +271,6 @@
         }
         .sec-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
 
-        /* ABOUT */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .acard {
             background: var(--bg2);
@@ -323,7 +314,6 @@
         }
         .acard p strong { color: var(--text); font-weight: 700; }
 
-        /* PROJECTS */
         .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 18px; }
         .proj-card {
             background: var(--bg2);
@@ -361,7 +351,6 @@
             border: 1px solid rgba(6,182,212,0.35);
         }
 
-        /* SKILLS */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
         .skill-box {
             background: var(--bg2);
@@ -401,7 +390,6 @@
             background: rgba(124,58,237,0.08);
         }
 
-        /* CONTACT */
         .contact-wrap {
             background: var(--bg2);
             border: 1px solid var(--border);
@@ -448,7 +436,6 @@
         }
         .cbtn-ghost:hover { border-color: rgba(6,182,212,0.55); color: #0e7490; transform: translateY(-2px); }
 
-        /* FOOTER */
         footer {
             border-top: 1px solid var(--border);
             padding: 28px 48px;
@@ -541,12 +528,12 @@
             </div>
             <div class="acard c6 full">
                 <div class="acard-icon">🖥️</div>
-                <h4>Infraestrutura & Redes</h4>
+                <h4>Infraestrutura &amp; Redes</h4>
                 <p>Administro servidores <strong>IBM/Lenovo</strong> e virtualização com <strong>Proxmox/VMware</strong>. Projeto e opero redes corporativas com <strong>MikroTik</strong>, <strong>BGP</strong>, <strong>OSPF</strong> e switches <strong>Juniper</strong>, sempre com foco em disponibilidade, segurança e desempenho.</p>
             </div>
             <div class="acard c5 full">
                 <div class="acard-icon">🔐</div>
-                <h4>NAC Empresarial & PacketFence</h4>
+                <h4>NAC Empresarial &amp; PacketFence</h4>
                 <p>Tenho conhecimento profundo em <strong>NAC empresarial</strong>, com experiência sólida em <strong>PacketFence</strong> para controle de acesso em redes corporativas. Atuo na implementação de autenticação <strong>802.1X</strong>, portais cativos e hotspots, integrando políticas de segurança, VLANs dinâmicas e segregação de dispositivos para garantir que apenas clientes autorizados acessem a rede.</p>
             </div>
         </div>
@@ -567,14 +554,14 @@
             </a>
             <a href="https://github.com/luanscps/camera2api-brSS" target="_blank" class="proj-card">
                 <span class="proj-icon">📷</span>
-                <span class="proj-title">Camera2 API — RTSP Streaming</span>
-                <span class="proj-desc">Sistema completo de streaming RTSP + painel de controle web para Camera2 API do Samsung Galaxy Note10+, com controles profissionais de ISO, exposição, foco e múltiplas lentes.</span>
+                <span class="proj-title">Camera2 Streaming LDEV</span>
+                <span class="proj-desc">Stream em RTMP, RTSP e HLS com controles avançados da lente da câmera disponível no celular — ISO, exposição, foco e troca de lentes em tempo real.</span>
                 <span class="proj-lang">Kotlin</span>
             </a>
             <a href="https://github.com/luanscps/scrcpy-cam4K" target="_blank" class="proj-card">
                 <span class="proj-icon">📱</span>
                 <span class="proj-title">Scrcpy Cam 4K</span>
-                <span class="proj-desc">Guia completo para transmitir a câmera do Android para o PC via Wi-Fi usando Scrcpy — gratuito, sem latência, até 4K/60fps.</span>
+                <span class="proj-desc">Guia completo para transmitir a câmera do Android para o PC via Wi-Fi usando Scrcpy — gratuito, sem latência e alta resolução.</span>
                 <span class="proj-lang">Batchfile</span>
             </a>
             <a href="https://github.com/luanscps/trading-system-agent-b3" target="_blank" class="proj-card">
@@ -613,17 +600,17 @@
     <section class="sec" id="skills">
         <div class="sec-header">
             <span class="sec-num">03.</span>
-            <h2 class="sec-title"><span>Tecnologias</span> & Ferramentas</h2>
+            <h2 class="sec-title"><span>Tecnologias</span> &amp; Ferramentas</h2>
             <div class="sec-line"></div>
         </div>
         <div class="skills-grid">
             <div class="skill-box"><h4>💻 Desenvolvimento</h4><div class="skill-tags"><span class="stag">Python</span><span class="stag">Java</span><span class="stag">Kotlin</span><span class="stag">ASP.NET</span><span class="stag">Shell Script</span><span class="stag">Git</span><span class="stag">Linux</span></div></div>
-            <div class="skill-box"><h4>🐳 DevOps & Cloud</h4><div class="skill-tags"><span class="stag">Docker</span><span class="stag">Kubernetes</span><span class="stag">Portainer</span><span class="stag">Proxmox</span><span class="stag">VMware</span><span class="stag">PacketFence</span></div></div>
+            <div class="skill-box"><h4>🐳 DevOps &amp; Cloud</h4><div class="skill-tags"><span class="stag">Docker</span><span class="stag">Kubernetes</span><span class="stag">Portainer</span><span class="stag">Proxmox</span><span class="stag">VMware</span><span class="stag">PacketFence</span></div></div>
             <div class="skill-box"><h4>🗄️ Bancos de Dados</h4><div class="skill-tags"><span class="stag">PostgreSQL</span><span class="stag">SQL Server</span><span class="stag">MySQL</span><span class="stag">MongoDB</span></div></div>
             <div class="skill-box"><h4>🤖 Inteligência Artificial</h4><div class="skill-tags"><span class="stag">Ollama</span><span class="stag">DeepSeek</span><span class="stag">Mistral</span><span class="stag">Qwen</span><span class="stag">LLMs</span><span class="stag">AI/ML</span></div></div>
             <div class="skill-box"><h4>🏢 Sistemas Empresariais</h4><div class="skill-tags"><span class="stag">Odoo ERP</span><span class="stag">SPED Fiscal</span><span class="stag">NFe Brasil</span><span class="stag">Prometheus</span><span class="stag">Grafana</span></div></div>
-            <div class="skill-box"><h4>📡 Streaming & Mobile</h4><div class="skill-tags"><span class="stag">MediaMTX</span><span class="stag">RTSP</span><span class="stag">Camera2 API</span><span class="stag">Scrcpy</span><span class="stag">ADB</span><span class="stag">Android</span><span class="stag">4K/60fps</span></div></div>
-            <div class="skill-box"><h4>🌐 Redes & Servidores</h4><div class="skill-tags"><span class="stag">MikroTik</span><span class="stag">BGP</span><span class="stag">OSPF</span><span class="stag">Juniper</span><span class="stag">VLANs</span><span class="stag">Firewall</span><span class="stag">VPN</span><span class="stag">TCP/IP</span><span class="stag">IBM/Lenovo</span><span class="stag">NAC</span><span class="stag">PRTG</span></div></div>
+            <div class="skill-box"><h4>📡 Streaming &amp; Mobile</h4><div class="skill-tags"><span class="stag">MediaMTX</span><span class="stag">RTSP</span><span class="stag">RTMP</span><span class="stag">HLS</span><span class="stag">Camera2 API</span><span class="stag">Scrcpy</span><span class="stag">ADB</span><span class="stag">Android</span></div></div>
+            <div class="skill-box"><h4>🌐 Redes &amp; Servidores</h4><div class="skill-tags"><span class="stag">MikroTik</span><span class="stag">BGP</span><span class="stag">OSPF</span><span class="stag">Juniper</span><span class="stag">VLANs</span><span class="stag">Firewall</span><span class="stag">VPN</span><span class="stag">TCP/IP</span><span class="stag">IBM/Lenovo</span><span class="stag">NAC</span><span class="stag">PRTG</span></div></div>
         </div>
     </section>
 
