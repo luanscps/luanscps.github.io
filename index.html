@@ -16,6 +16,8 @@
             --purple:  #7c3aed;
             --cyan:    #06b6d4;
             --pink:    #ec4899;
+            --orange:  #f97316;
+            --green:   #10b981;
             --text:    #0f172a;
             --muted:   #475569;
             --font-body: 'Roboto', sans-serif;
@@ -65,7 +67,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .nav-links { display: flex; gap: 30px; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-links a {
             font-family: var(--font-body);
             color: var(--muted);
@@ -87,6 +89,22 @@
         }
         .nav-links a:hover { color: var(--cyan); }
         .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-kofi {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #ff5e5b, #ff8c42);
+            color: #fff !important;
+            font-size: 0.82em !important;
+            font-weight: 700 !important;
+            text-decoration: none;
+            transition: all 0.25s;
+            -webkit-text-fill-color: #fff !important;
+        }
+        .nav-kofi::after { display: none !important; }
+        .nav-kofi:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(255,94,91,0.35); }
 
         .hero {
             position: relative;
@@ -102,14 +120,14 @@
         .hero-tag {
             display: inline-block;
             padding: 5px 14px;
-            border: 1px solid var(--purple);
+            border: 1px solid var(--green);
             border-radius: 4px;
             font-family: var(--font-mono);
             font-size: 0.72em;
-            color: var(--purple);
+            color: var(--green);
             letter-spacing: 1px;
             margin-bottom: 20px;
-            background: rgba(124,58,237,0.08);
+            background: rgba(16,185,129,0.08);
         }
         .hero h1 {
             font-family: var(--font-body);
@@ -169,6 +187,15 @@
             background: rgba(6,182,212,0.10);
         }
         .cta-outline:hover { background: rgba(6,182,212,0.16); box-shadow: 0 0 20px rgba(6,182,212,0.18); transform: translateY(-2px); }
+        .cta-kofi {
+            background: linear-gradient(135deg, #ff5e5b, #ff8c42);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(255,94,91,0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cta-kofi:hover { box-shadow: 0 0 30px rgba(255,94,91,0.35); transform: translateY(-2px); }
 
         .hero-stats { display: flex; gap: 40px; }
         .hstat-num {
@@ -231,6 +258,23 @@
             50%  { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        .avatar-available {
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            background: var(--green);
+            color: #fff;
+            font-family: var(--font-mono);
+            font-size: 0.68em;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 12px rgba(16,185,129,0.35);
+        }
         .float-badge {
             position: absolute;
             background: var(--bg3);
@@ -252,6 +296,75 @@
             0%, 100% { transform: translateY(0); }
             50%       { transform: translateY(-6px); }
         }
+
+        /* DISPONIVEL BANNER */
+        .available-banner {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto 0;
+            padding: 0 48px;
+        }
+        .available-inner {
+            background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(6,182,212,0.08));
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 14px;
+            padding: 28px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .avail-left { display: flex; align-items: center; gap: 16px; }
+        .avail-dot {
+            width: 14px; height: 14px;
+            background: var(--green);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(16,185,129,0.2);
+            animation: pulse-dot 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(16,185,129,0.2); }
+            50%       { box-shadow: 0 0 0 8px rgba(16,185,129,0.08); }
+        }
+        .avail-text h4 {
+            font-family: var(--font-body);
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .avail-text p {
+            font-family: var(--font-body);
+            font-size: 0.85em;
+            color: var(--muted);
+        }
+        .avail-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .avail-tag {
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 0.78em;
+            font-weight: 600;
+            background: rgba(16,185,129,0.1);
+            color: #059669;
+            border: 1px solid rgba(16,185,129,0.3);
+        }
+        .avail-cta {
+            font-family: var(--font-body);
+            padding: 10px 22px;
+            border-radius: 7px;
+            font-weight: 700;
+            font-size: 0.88em;
+            text-decoration: none;
+            background: var(--green);
+            color: #fff;
+            transition: all 0.25s;
+            white-space: nowrap;
+        }
+        .avail-cta:hover { background: #059669; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.3); }
 
         .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 48px 100px; position: relative; z-index: 1; }
         .sec { margin-bottom: 80px; }
@@ -313,6 +426,45 @@
             line-height: 1.85;
         }
         .acard p strong { color: var(--text); font-weight: 700; }
+
+        /* SERVICOS */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+        .svc-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .svc-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+        }
+        .svc-card.s1::before { background: linear-gradient(90deg, var(--purple), var(--pink)); }
+        .svc-card.s2::before { background: linear-gradient(90deg, var(--cyan), var(--purple)); }
+        .svc-card.s3::before { background: linear-gradient(90deg, var(--pink), var(--orange)); }
+        .svc-card.s4::before { background: linear-gradient(90deg, var(--green), var(--cyan)); }
+        .svc-card.s5::before { background: linear-gradient(90deg, var(--orange), var(--pink)); }
+        .svc-card.s6::before { background: linear-gradient(90deg, var(--purple), var(--cyan)); }
+        .svc-card:hover { transform: translateY(-5px); border-color: #cfd6ee; box-shadow: 0 15px 40px rgba(15,23,42,0.08); }
+        .svc-icon { font-size: 2em; margin-bottom: 14px; }
+        .svc-title { font-family: var(--font-body); font-size: 1em; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+        .svc-desc { font-family: var(--font-body); font-size: 0.87em; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+        .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .svc-tag {
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.72em;
+            font-weight: 500;
+            background: var(--bg3);
+            color: var(--muted);
+            border: 1px solid var(--border);
+        }
 
         .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 18px; }
         .proj-card {
@@ -390,6 +542,72 @@
             background: rgba(124,58,237,0.08);
         }
 
+        /* KO-FI */
+        .kofi-section {
+            background: linear-gradient(135deg, #fff5f0, #fff0f8);
+            border: 1px solid rgba(249,115,22,0.25);
+            border-radius: 18px;
+            padding: 52px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .kofi-section::before {
+            content: '';
+            position: absolute;
+            top: -60px; left: 50%;
+            transform: translateX(-50%);
+            width: 280px; height: 280px;
+            background: radial-gradient(circle, rgba(249,115,22,0.10) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .kofi-emoji { font-size: 3em; margin-bottom: 16px; display: block; }
+        .kofi-section h3 {
+            font-family: var(--font-body);
+            font-size: 1.7em;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .kofi-section p {
+            font-family: var(--font-body);
+            color: var(--muted);
+            font-size: 0.97em;
+            max-width: 560px;
+            margin: 0 auto 28px;
+            line-height: 1.8;
+        }
+        .kofi-btn-wrap { margin-bottom: 20px; }
+        .kofi-btn-wrap a {
+            display: inline-block;
+            transition: transform 0.25s, box-shadow 0.25s;
+            border-radius: 8px;
+        }
+        .kofi-btn-wrap a:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(255,94,91,0.3); }
+        .kofi-note {
+            font-family: var(--font-mono);
+            font-size: 0.78em;
+            color: #94a3b8;
+        }
+        .kofi-contribute-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(249,115,22,0.15);
+        }
+        .kofi-contrib-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 0.87em;
+            color: var(--muted);
+        }
+        .kofi-contrib-item span { font-size: 1.2em; }
+
         .contact-wrap {
             background: var(--bg2);
             border: 1px solid var(--border);
@@ -435,6 +653,12 @@
             background: transparent;
         }
         .cbtn-ghost:hover { border-color: rgba(6,182,212,0.55); color: #0e7490; transform: translateY(-2px); }
+        .cbtn-kofi {
+            background: linear-gradient(135deg, #ff5e5b, #ff8c42);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(255,94,91,0.18);
+        }
+        .cbtn-kofi:hover { box-shadow: 0 0 30px rgba(255,94,91,0.35); transform: translateY(-2px); }
 
         footer {
             border-top: 1px solid var(--border);
@@ -451,6 +675,7 @@
         @media (max-width: 768px) {
             nav { padding: 14px 20px; }
             .nav-links { gap: 16px; }
+            .nav-kofi { display: none; }
             .hero { grid-template-columns: 1fr; padding: 60px 20px 40px; gap: 40px; }
             .hero h1 { font-size: 2.6em; }
             .hero-right { order: -1; }
@@ -459,6 +684,10 @@
             .about-grid { grid-template-columns: 1fr; }
             .acard.full { grid-column: auto; }
             .hero-stats { gap: 24px; }
+            .available-banner { padding: 0 20px; }
+            .available-inner { flex-direction: column; align-items: flex-start; }
+            .kofi-section { padding: 36px 20px; }
+            .contact-wrap { padding: 36px 20px; }
         }
     </style>
 </head>
@@ -468,43 +697,68 @@
     <span class="nav-logo">&gt; luan.dev_</span>
     <div class="nav-links">
         <a href="#sobre">Sobre</a>
+        <a href="#servicos">Servi&ccedil;os</a>
         <a href="#projetos">Projetos</a>
         <a href="#skills">Skills</a>
         <a href="#contato">Contato</a>
+        <a href="https://ko-fi.com/ludev" target="_blank" class="nav-kofi">&#9749; Ko-fi</a>
     </div>
 </nav>
 
 <div class="hero">
     <div class="hero-left">
-        <span class="hero-tag">&#9679; Disponível para projetos</span>
-        <h1>Olá, eu sou<br><span class="name">Luan</span></h1>
-        <p class="hero-subtitle">Profissional de TI &amp; Dev desde 2004<br>Atualmente Eletricista e Mecânico Automotivo.<span class="cursor"></span></p>
+        <span class="hero-tag">&#9679; Dispon&iacute;vel para projetos</span>
+        <h1>Ol&aacute;, eu sou<br><span class="name">Luan</span></h1>
+        <p class="hero-subtitle">Profissional de TI &amp; Dev desde 2004<br>Redes &middot; Servidores &middot; IA &middot; Streaming &middot; ERP<span class="cursor"></span></p>
         <div class="hero-cta">
-            <a href="https://github.com/luanscps" target="_blank" class="cta-btn cta-primary">Ver GitHub</a>
+            <a href="#servicos" class="cta-btn cta-primary">Ver Servi&ccedil;os</a>
             <a href="mailto:luanscps@gmail.com" class="cta-btn cta-outline">Entrar em contato</a>
+            <a href="https://ko-fi.com/ludev" target="_blank" class="cta-btn cta-kofi">&#9749; Me paga um caf&eacute;</a>
         </div>
         <div class="hero-stats">
             <div><span class="hstat-num">20+</span><span class="hstat-lbl">Anos em TI</span></div>
-            <div><span class="hstat-num">14</span><span class="hstat-lbl">Repositórios</span></div>
-            <div><span class="hstat-num">2004</span><span class="hstat-lbl">Início</span></div>
+            <div><span class="hstat-num">14</span><span class="hstat-lbl">Reposit&oacute;rios</span></div>
+            <div><span class="hstat-num">2004</span><span class="hstat-lbl">In&iacute;cio</span></div>
         </div>
     </div>
     <div class="hero-right">
         <div class="avatar-wrap">
             <div class="avatar-glow"></div>
             <div class="avatar-border"><div class="avatar-border-inner"></div></div>
-            <img src="https://avatars.githubusercontent.com/u/13770810?v=4" alt="Luan">
-            <div class="float-badge b1">🐍 Python</div>
-            <div class="float-badge b2">📡 MikroTik / Juniper</div>
-            <div class="float-badge b3">🛡️ NAC / Networking</div>
-            <div class="float-badge b4">🐳 Docker</div>
+            <img src="https://avatars.githubusercontent.com/u/13770810?v=4" alt="Luan &mdash; Dispon&iacute;vel para projetos">
+            <div class="avatar-available">&#9679; Dispon&iacute;vel para projetos</div>
+            <div class="float-badge b1">&#128013; Python</div>
+            <div class="float-badge b2">&#128225; MikroTik / Juniper</div>
+            <div class="float-badge b3">&#128737;&#65039; NAC / Networking</div>
+            <div class="float-badge b4">&#128051; Docker</div>
         </div>
+    </div>
+</div>
+
+<div class="available-banner">
+    <div class="available-inner">
+        <div class="avail-left">
+            <div class="avail-dot"></div>
+            <div class="avail-text">
+                <h4>&#129001; Dispon&iacute;vel para novos projetos</h4>
+                <p>Aceito projetos freelance, consultoria e colabora&ccedil;&otilde;es remotas ou presenciais em SP.</p>
+            </div>
+        </div>
+        <div class="avail-tags">
+            <span class="avail-tag">&#127760; Redes</span>
+            <span class="avail-tag">&#128274; Seguran&ccedil;a</span>
+            <span class="avail-tag">&#128051; Docker</span>
+            <span class="avail-tag">&#129302; IA / LLMs</span>
+            <span class="avail-tag">&#128230; ERP Odoo</span>
+            <span class="avail-tag">&#127916; Streaming</span>
+        </div>
+        <a href="mailto:luanscps@gmail.com" class="avail-cta">Solicitar or&ccedil;amento &rarr;</a>
     </div>
 </div>
 
 <div class="wrapper">
 
-    <section class="sec" id="sobre">
+    <section class="sec" id="sobre" style="margin-top:60px;">
         <div class="sec-header">
             <span class="sec-num">01.</span>
             <h2 class="sec-title"><span>Sobre</span> Mim</h2>
@@ -512,84 +766,142 @@
         </div>
         <div class="about-grid">
             <div class="acard c4 full">
-                <div class="acard-icon">📅</div>
-                <h4>Trajetória</h4>
-                <p><strong>Técnico de Informática desde 2004</strong>, acumulando mais de <strong>duas décadas</strong> de experiência prática em tecnologia da informação. Começando pelas bases — manutenção de hardware, configuração de sistemas e suporte técnico — evoluí naturalmente para desenvolvimento de software, administração de servidores, redes e arquitetura de soluções complexas.</p>
+                <div class="acard-icon">&#128197;</div>
+                <h4>Trajet&oacute;ria</h4>
+                <p><strong>T&eacute;cnico de Inform&aacute;tica desde 2004</strong>, acumulando mais de <strong>duas d&eacute;cadas</strong> de experi&ecirc;ncia pr&aacute;tica em tecnologia da informa&ccedil;&atilde;o. Come&ccedil;ando pelas bases &mdash; manuten&ccedil;&atilde;o de hardware, configura&ccedil;&atilde;o de sistemas e suporte t&eacute;cnico &mdash; evolu&iacute; naturalmente para desenvolvimento de software, administra&ccedil;&atilde;o de servidores, redes e arquitetura de solu&ccedil;&otilde;es complexas.</p>
             </div>
             <div class="acard c1">
-                <div class="acard-icon">💻</div>
+                <div class="acard-icon">&#128187;</div>
                 <h4>Desenvolvimento</h4>
-                <p>Trabalho com <strong>Python</strong> e <strong>ASP.NET</strong>, desde scripts de automação até aplicações enterprise. Orquestração de containers com <strong>Docker/Kubernetes</strong> e integração de modelos de <strong>IA (LLMs)</strong> em produção.</p>
+                <p>Trabalho com <strong>Python</strong> e <strong>ASP.NET</strong>, desde scripts de automa&ccedil;&atilde;o at&eacute; aplica&ccedil;&otilde;es enterprise. Orquestra&ccedil;&atilde;o de containers com <strong>Docker/Kubernetes</strong> e integra&ccedil;&atilde;o de modelos de <strong>IA (LLMs)</strong> em produ&ccedil;&atilde;o.</p>
             </div>
             <div class="acard c2">
-                <div class="acard-icon">🏢</div>
+                <div class="acard-icon">&#127970;</div>
                 <h4>Sistemas Corporativos</h4>
-                <p>Implemento <strong>ERP (Odoo)</strong> com localização brasileira, incluindo <strong>SPED Fiscal</strong> e <strong>NFe</strong>. Trabalho com <strong>PostgreSQL</strong>, <strong>SQL Server</strong>, <strong>MySQL</strong> e <strong>MongoDB</strong>.</p>
+                <p>Implemento <strong>ERP (Odoo)</strong> com localiza&ccedil;&atilde;o brasileira, incluindo <strong>SPED Fiscal</strong> e <strong>NFe</strong>. Trabalho com <strong>PostgreSQL</strong>, <strong>SQL Server</strong>, <strong>MySQL</strong> e <strong>MongoDB</strong>.</p>
             </div>
             <div class="acard c6 full">
-                <div class="acard-icon">🖥️</div>
+                <div class="acard-icon">&#128421;&#65039;</div>
                 <h4>Infraestrutura &amp; Redes</h4>
-                <p>Administro servidores <strong>IBM/Lenovo</strong> e virtualização com <strong>Proxmox/VMware</strong>. Projeto e opero redes corporativas com <strong>MikroTik</strong>, <strong>BGP</strong>, <strong>OSPF</strong> e switches <strong>Juniper</strong>, sempre com foco em disponibilidade, segurança e desempenho.</p>
+                <p>Administro servidores <strong>IBM/Lenovo</strong> e virtualiza&ccedil;&atilde;o com <strong>Proxmox/VMware</strong>. Projeto e opero redes corporativas com <strong>MikroTik</strong>, <strong>BGP</strong>, <strong>OSPF</strong> e switches <strong>Juniper</strong>, sempre com foco em disponibilidade, seguran&ccedil;a e desempenho.</p>
             </div>
             <div class="acard c5 full">
-                <div class="acard-icon">🔐</div>
+                <div class="acard-icon">&#128274;</div>
                 <h4>NAC Empresarial &amp; PacketFence</h4>
-                <p>Tenho conhecimento profundo em <strong>NAC empresarial</strong>, com experiência sólida em <strong>PacketFence</strong> para controle de acesso em redes corporativas. Atuo na implementação de autenticação <strong>802.1X</strong>, portais cativos e hotspots, integrando políticas de segurança, VLANs dinâmicas e segregação de dispositivos para garantir que apenas clientes autorizados acessem a rede.</p>
+                <p>Tenho conhecimento profundo em <strong>NAC empresarial</strong>, com experi&ecirc;ncia s&oacute;lida em <strong>PacketFence</strong> para controle de acesso em redes corporativas. Atuo na implementa&ccedil;&atilde;o de autentica&ccedil;&atilde;o <strong>802.1X</strong>, portais cativos e hotspots, integrando pol&iacute;ticas de seguran&ccedil;a, VLANs din&acirc;micas e segrega&ccedil;&atilde;o de dispositivos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec" id="servicos">
+        <div class="sec-header">
+            <span class="sec-num">02.</span>
+            <h2 class="sec-title"><span>Servi&ccedil;os</span> Oferecidos</h2>
+            <div class="sec-line"></div>
+        </div>
+        <div class="services-grid">
+            <div class="svc-card s1">
+                <div class="svc-icon">&#127760;</div>
+                <div class="svc-title">Redes &amp; Infraestrutura</div>
+                <div class="svc-desc">Projeto, implanta&ccedil;&atilde;o e manuten&ccedil;&atilde;o de redes corporativas. Configura&ccedil;&atilde;o de roteadores, switches, firewall, VPN e segmenta&ccedil;&atilde;o por VLANs.</div>
+                <div class="svc-tags">
+                    <span class="svc-tag">MikroTik</span><span class="svc-tag">Juniper</span><span class="svc-tag">BGP/OSPF</span><span class="svc-tag">VLANs</span><span class="svc-tag">VPN</span>
+                </div>
+            </div>
+            <div class="svc-card s2">
+                <div class="svc-icon">&#128274;</div>
+                <div class="svc-title">Seguran&ccedil;a &amp; NAC</div>
+                <div class="svc-desc">Implanta&ccedil;&atilde;o de controle de acesso &agrave; rede (NAC) com PacketFence. Autentica&ccedil;&atilde;o 802.1X, portal cativo, hotspot e pol&iacute;ticas de seguran&ccedil;a corporativas.</div>
+                <div class="svc-tags">
+                    <span class="svc-tag">PacketFence</span><span class="svc-tag">802.1X</span><span class="svc-tag">Portal Cativo</span><span class="svc-tag">Hotspot</span>
+                </div>
+            </div>
+            <div class="svc-card s3">
+                <div class="svc-icon">&#128051;</div>
+                <div class="svc-title">DevOps &amp; Servidores</div>
+                <div class="svc-desc">Setup de ambientes de produ&ccedil;&atilde;o com Docker, Portainer, Proxmox e CasaOS. Monitoramento com Prometheus + Grafana e automa&ccedil;&atilde;o de deploy.</div>
+                <div class="svc-tags">
+                    <span class="svc-tag">Docker</span><span class="svc-tag">Proxmox</span><span class="svc-tag">Portainer</span><span class="svc-tag">Grafana</span>
+                </div>
+            </div>
+            <div class="svc-card s4">
+                <div class="svc-icon">&#128230;</div>
+                <div class="svc-title">ERP Odoo Brasil</div>
+                <div class="svc-desc">Implanta&ccedil;&atilde;o e customiza&ccedil;&atilde;o do Odoo 17/18 com localiza&ccedil;&atilde;o brasileira completa &mdash; NFe, SPED Fiscal, integra&ccedil;&atilde;o cont&aacute;bil e treinamento da equipe.</div>
+                <div class="svc-tags">
+                    <span class="svc-tag">Odoo 17/18</span><span class="svc-tag">NFe</span><span class="svc-tag">SPED Fiscal</span><span class="svc-tag">PostgreSQL</span>
+                </div>
+            </div>
+            <div class="svc-card s5">
+                <div class="svc-icon">&#127916;</div>
+                <div class="svc-title">Streaming &amp; M&iacute;dia</div>
+                <div class="svc-desc">Configura&ccedil;&atilde;o de servidores de streaming com MediaMTX. Suporte a RTSP, RTMP, HLS, WebRTC e SRT. Integra&ccedil;&atilde;o com c&acirc;meras IP, Android e OBS.</div>
+                <div class="svc-tags">
+                    <span class="svc-tag">MediaMTX</span><span class="svc-tag">RTSP/RTMP</span><span class="svc-tag">HLS</span><span class="svc-tag">WebRTC</span><span class="svc-tag">OBS</span>
+                </div>
+            </div>
+            <div class="svc-card s6">
+                <div class="svc-icon">&#129302;</div>
+                <div class="svc-title">IA Local &amp; Automa&ccedil;&atilde;o</div>
+                <div class="svc-desc">Deploy de modelos LLM locais com Ollama, integra&ccedil;&atilde;o em fluxos de trabalho e automa&ccedil;&atilde;o com Python. IA privada, sem custo de API e sob seu controle.</div>
+                <div class="svc-tags">
+                    <span class="svc-tag">Ollama</span><span class="svc-tag">LLMs</span><span class="svc-tag">Python</span><span class="svc-tag">Automa&ccedil;&atilde;o</span>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="sec" id="projetos">
         <div class="sec-header">
-            <span class="sec-num">02.</span>
+            <span class="sec-num">03.</span>
             <h2 class="sec-title"><span>Projetos</span> em Destaque</h2>
             <div class="sec-line"></div>
         </div>
         <div class="proj-grid">
             <a href="https://github.com/luanscps/MediaMTX-GUI" target="_blank" class="proj-card">
-                <span class="proj-icon">🎬</span>
+                <span class="proj-icon">&#127916;</span>
                 <span class="proj-title">MediaMTX GUI</span>
-                <span class="proj-desc">GUI profissional em Java Swing para gerenciar o servidor de mídia MediaMTX — start/stop, editor YAML, configuração de gravação e logs em tempo real.</span>
+                <span class="proj-desc">GUI profissional em Java Swing para gerenciar o servidor de m&iacute;dia MediaMTX &mdash; start/stop, editor YAML, configura&ccedil;&atilde;o de grava&ccedil;&atilde;o e logs em tempo real.</span>
                 <span class="proj-lang">Java</span>
             </a>
-            <a href="https://github.com/luanscps/camera2api-brSS" target="_blank" class="proj-card">
-                <span class="proj-icon">📷</span>
-                <span class="proj-title">Camera2 Streaming LDEV</span>
-                <span class="proj-desc">Stream em RTMP, RTSP e HLS com controles avançados da lente da câmera disponível no celular — ISO, exposição, foco e troca de lentes em tempo real.</span>
+            <a href="https://github.com/luanscps/CAMSTREAMER-BR" target="_blank" class="proj-card">
+                <span class="proj-icon">&#128247;</span>
+                <span class="proj-title">CAMSTREAMER-BR</span>
+                <span class="proj-desc">Stream RTSP + painel web para Camera2 API do Samsung Galaxy Note10+ com controles profissionais de ISO, exposi&ccedil;&atilde;o, foco e m&uacute;ltiplas lentes.</span>
                 <span class="proj-lang">Kotlin</span>
             </a>
             <a href="https://github.com/luanscps/scrcpy-cam4K" target="_blank" class="proj-card">
-                <span class="proj-icon">📱</span>
+                <span class="proj-icon">&#128241;</span>
                 <span class="proj-title">Scrcpy Cam 4K</span>
-                <span class="proj-desc">Guia completo para transmitir a câmera do Android para o PC via Wi-Fi usando Scrcpy — gratuito, sem latência e alta resolução.</span>
+                <span class="proj-desc">Guia completo para transmitir a c&acirc;mera do Android para o PC via Wi-Fi usando Scrcpy &mdash; gratuito, sem lat&ecirc;ncia e alta resolu&ccedil;&atilde;o.</span>
                 <span class="proj-lang">Batchfile</span>
             </a>
             <a href="https://github.com/luanscps/trading-system-agent-b3" target="_blank" class="proj-card">
-                <span class="proj-icon">🚀</span>
+                <span class="proj-icon">&#128640;</span>
                 <span class="proj-title">Trading System Agent B3</span>
-                <span class="proj-desc">Sistema autônomo 24/7 com 5 modelos IA em cascata (SmolLM2, Mistral, DeepSeek-R1, Qwen2.5-Coder, Gemma3) para análise do mercado B3.</span>
+                <span class="proj-desc">Sistema aut&ocirc;nomo 24/7 com 5 modelos IA em cascata (SmolLM2, Mistral, DeepSeek-R1, Qwen2.5-Coder, Gemma3) para an&aacute;lise do mercado B3.</span>
                 <span class="proj-lang">Python</span>
             </a>
             <a href="https://github.com/luanscps/openclaw-br" target="_blank" class="proj-card">
-                <span class="proj-icon">🦞</span>
+                <span class="proj-icon">&#129438;</span>
                 <span class="proj-title">OpenClaw BR</span>
-                <span class="proj-desc">Assistente de IA pessoal com instalação otimizada para CasaOS + Portainer + macvlan-dhcp. Automação doméstica inteligente.</span>
+                <span class="proj-desc">Assistente de IA pessoal com instala&ccedil;&atilde;o otimizada para CasaOS + Portainer + macvlan-dhcp. Automa&ccedil;&atilde;o dom&eacute;stica inteligente.</span>
                 <span class="proj-lang">Shell</span>
             </a>
             <a href="https://github.com/luanscps/odoobr" target="_blank" class="proj-card">
-                <span class="proj-icon">📦</span>
+                <span class="proj-icon">&#128230;</span>
                 <span class="proj-title">Odoo BR Docker</span>
-                <span class="proj-desc">Odoo 18.0 com localização brasileira completa (NFe) via Docker com Portainer e macvlan-dhcp para produção.</span>
+                <span class="proj-desc">Odoo 18.0 com localiza&ccedil;&atilde;o brasileira completa (NFe) via Docker com Portainer e macvlan-dhcp para produ&ccedil;&atilde;o.</span>
                 <span class="proj-lang">Shell</span>
             </a>
             <a href="https://github.com/luanscps/odoo-brasil-docker" target="_blank" class="proj-card">
-                <span class="proj-icon">🏢</span>
+                <span class="proj-icon">&#127970;</span>
                 <span class="proj-title">Odoo 17 LTS Brasil</span>
-                <span class="proj-desc">Odoo 17 LTS com localização brasileira em Docker/Container com macvlan-dhcp para Portainer. Solução ERP empresarial.</span>
+                <span class="proj-desc">Odoo 17 LTS com localiza&ccedil;&atilde;o brasileira em Docker/Container com macvlan-dhcp para Portainer. Solu&ccedil;&atilde;o ERP empresarial.</span>
                 <span class="proj-lang">Shell</span>
             </a>
             <a href="https://github.com/luanscps/monitoring" target="_blank" class="proj-card">
-                <span class="proj-icon">📊</span>
+                <span class="proj-icon">&#128202;</span>
                 <span class="proj-title">Monitoring Stack</span>
                 <span class="proj-desc">Prometheus + Grafana para CasaOS com suporte macvlan. Template pronto para observabilidade de ambientes containerizados.</span>
                 <span class="proj-lang">Shell</span>
@@ -599,30 +911,59 @@
 
     <section class="sec" id="skills">
         <div class="sec-header">
-            <span class="sec-num">03.</span>
+            <span class="sec-num">04.</span>
             <h2 class="sec-title"><span>Tecnologias</span> &amp; Ferramentas</h2>
             <div class="sec-line"></div>
         </div>
         <div class="skills-grid">
-            <div class="skill-box"><h4>💻 Desenvolvimento</h4><div class="skill-tags"><span class="stag">Python</span><span class="stag">Java</span><span class="stag">Kotlin</span><span class="stag">ASP.NET</span><span class="stag">Shell Script</span><span class="stag">Git</span><span class="stag">Linux</span></div></div>
-            <div class="skill-box"><h4>🐳 DevOps &amp; Cloud</h4><div class="skill-tags"><span class="stag">Docker</span><span class="stag">Kubernetes</span><span class="stag">Portainer</span><span class="stag">Proxmox</span><span class="stag">VMware</span><span class="stag">PacketFence</span></div></div>
-            <div class="skill-box"><h4>🗄️ Bancos de Dados</h4><div class="skill-tags"><span class="stag">PostgreSQL</span><span class="stag">SQL Server</span><span class="stag">MySQL</span><span class="stag">MongoDB</span></div></div>
-            <div class="skill-box"><h4>🤖 Inteligência Artificial</h4><div class="skill-tags"><span class="stag">Ollama</span><span class="stag">DeepSeek</span><span class="stag">Mistral</span><span class="stag">Qwen</span><span class="stag">LLMs</span><span class="stag">AI/ML</span></div></div>
-            <div class="skill-box"><h4>🏢 Sistemas Empresariais</h4><div class="skill-tags"><span class="stag">Odoo ERP</span><span class="stag">SPED Fiscal</span><span class="stag">NFe Brasil</span><span class="stag">Prometheus</span><span class="stag">Grafana</span></div></div>
-            <div class="skill-box"><h4>📡 Streaming &amp; Mobile</h4><div class="skill-tags"><span class="stag">MediaMTX</span><span class="stag">RTSP</span><span class="stag">RTMP</span><span class="stag">HLS</span><span class="stag">Camera2 API</span><span class="stag">Scrcpy</span><span class="stag">ADB</span><span class="stag">Android</span></div></div>
-            <div class="skill-box"><h4>🌐 Redes &amp; Servidores</h4><div class="skill-tags"><span class="stag">MikroTik</span><span class="stag">BGP</span><span class="stag">OSPF</span><span class="stag">Juniper</span><span class="stag">VLANs</span><span class="stag">Firewall</span><span class="stag">VPN</span><span class="stag">TCP/IP</span><span class="stag">IBM/Lenovo</span><span class="stag">NAC</span><span class="stag">PRTG</span></div></div>
+            <div class="skill-box"><h4>&#128187; Desenvolvimento</h4><div class="skill-tags"><span class="stag">Python</span><span class="stag">Java</span><span class="stag">Kotlin</span><span class="stag">ASP.NET</span><span class="stag">Shell Script</span><span class="stag">Git</span><span class="stag">Linux</span></div></div>
+            <div class="skill-box"><h4>&#128051; DevOps &amp; Cloud</h4><div class="skill-tags"><span class="stag">Docker</span><span class="stag">Kubernetes</span><span class="stag">Portainer</span><span class="stag">Proxmox</span><span class="stag">VMware</span><span class="stag">PacketFence</span></div></div>
+            <div class="skill-box"><h4>&#128452;&#65039; Bancos de Dados</h4><div class="skill-tags"><span class="stag">PostgreSQL</span><span class="stag">SQL Server</span><span class="stag">MySQL</span><span class="stag">MongoDB</span></div></div>
+            <div class="skill-box"><h4>&#129302; Intelig&ecirc;ncia Artificial</h4><div class="skill-tags"><span class="stag">Ollama</span><span class="stag">DeepSeek</span><span class="stag">Mistral</span><span class="stag">Qwen</span><span class="stag">LLMs</span><span class="stag">AI/ML</span></div></div>
+            <div class="skill-box"><h4>&#127970; Sistemas Empresariais</h4><div class="skill-tags"><span class="stag">Odoo ERP</span><span class="stag">SPED Fiscal</span><span class="stag">NFe Brasil</span><span class="stag">Prometheus</span><span class="stag">Grafana</span></div></div>
+            <div class="skill-box"><h4>&#128225; Streaming &amp; Mobile</h4><div class="skill-tags"><span class="stag">MediaMTX</span><span class="stag">RTSP</span><span class="stag">RTMP</span><span class="stag">HLS</span><span class="stag">Camera2 API</span><span class="stag">Scrcpy</span><span class="stag">ADB</span><span class="stag">Android</span></div></div>
+            <div class="skill-box"><h4>&#127760; Redes &amp; Servidores</h4><div class="skill-tags"><span class="stag">MikroTik</span><span class="stag">BGP</span><span class="stag">OSPF</span><span class="stag">Juniper</span><span class="stag">VLANs</span><span class="stag">Firewall</span><span class="stag">VPN</span><span class="stag">TCP/IP</span><span class="stag">IBM/Lenovo</span><span class="stag">NAC</span><span class="stag">PRTG</span></div></div>
+        </div>
+    </section>
+
+    <section class="sec" id="apoio">
+        <div class="sec-header">
+            <span class="sec-num">05.</span>
+            <h2 class="sec-title"><span>Apoiar</span> os Projetos</h2>
+            <div class="sec-line"></div>
+        </div>
+        <div class="kofi-section">
+            <span class="kofi-emoji">&#9749;</span>
+            <h3>Gostou de algum projeto?<br>Me paga um caf&eacute;!</h3>
+            <p>
+                Manter tudo isso ativo exige <strong>horas de desenvolvimento, testes, documenta&ccedil;&atilde;o e infraestrutura</strong>.
+                Nada aqui tem paywall &mdash; e quero que continue assim. Se algum reposit&oacute;rio te economizou
+                tempo ou resolveu um problema, considera apoiar!
+            </p>
+            <div class="kofi-btn-wrap">
+                <a href="https://ko-fi.com/ludev" target="_blank">
+                    <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Apoiar no Ko-fi" height="36"/>
+                </a>
+            </div>
+            <p class="kofi-note">&#11088; Um star no reposit&oacute;rio tamb&eacute;m ajuda muito a alcan&ccedil;ar mais pessoas!</p>
+            <div class="kofi-contribute-list">
+                <div class="kofi-contrib-item"><span>&#128027;</span> Abre uma issue com bugs ou sugest&otilde;es</div>
+                <div class="kofi-contrib-item"><span>&#128260;</span> Faz um PR &mdash; qualquer contribui&ccedil;&atilde;o &eacute; bem-vinda</div>
+                <div class="kofi-contrib-item"><span>&#128226;</span> Compartilha com quem vai usar</div>
+                <div class="kofi-contrib-item"><span>&#128172;</span> Deixa um coment&aacute;rio &mdash; feedback &eacute; combust&iacute;vel</div>
+            </div>
         </div>
     </section>
 
     <section class="sec" id="contato">
         <div class="sec-header">
-            <span class="sec-num">04.</span>
+            <span class="sec-num">06.</span>
             <h2 class="sec-title"><span>Entre em</span> Contato</h2>
             <div class="sec-line"></div>
         </div>
         <div class="contact-wrap">
-            <h3>Vamos conversar? 🚀</h3>
-            <p>Aberto a projetos, colaborações e novas oportunidades.</p>
+            <h3>Vamos conversar? &#128640;</h3>
+            <p>Aberto a projetos freelance, consultoria t&eacute;cnica, colabora&ccedil;&otilde;es e novas oportunidades.<br>Atendo remoto e presencial em S&atilde;o Paulo.</p>
             <div class="contact-btns">
                 <a href="https://github.com/luanscps" target="_blank" class="cbtn cbtn-purple">
                     <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
@@ -632,6 +973,9 @@
                     <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
                     luanscps@gmail.com
                 </a>
+                <a href="https://ko-fi.com/ludev" target="_blank" class="cbtn cbtn-kofi">
+                    &#9749; Ko-fi
+                </a>
             </div>
         </div>
     </section>
@@ -639,7 +983,7 @@
 </div>
 
 <footer>
-    <p><span class="p">//</span> &copy; 2026 <span class="c">Luan</span> &mdash; Sysadmin &amp; Técnico desde 2004 &mdash; Feito com <span class="p">♥</span> e HTML puro</p>
+    <p><span class="p">//</span> &copy; 2026 <span class="c">Luan</span> &mdash; Sysadmin &amp; Dev desde 2004 &mdash; Feito com <span class="p">&#9829;</span> e HTML puro &mdash; <a href="https://ko-fi.com/ludev" target="_blank" style="color:var(--orange);text-decoration:none;">&#9749; ko-fi.com/ludev</a></p>
 </footer>
 
 <!-- StatCounter -->
